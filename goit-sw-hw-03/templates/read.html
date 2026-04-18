@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Read messages</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="/">Home</a> |
+      <a href="/message">Send message</a> |
+      <a href="/read">Read messages</a>
+    </nav>
+
+    <h1>Saved messages</h1>
+
+    {% if messages %}
+      {% for dt, data in messages.items() %}
+        <div style="border: 1px solid #ccc; padding: 12px; margin-bottom: 12px; border-radius: 8px;">
+          <p><strong>Time:</strong> {{ dt }}</p>
+          <p><strong>User:</strong> {{ data.username }}</p>
+          <p><strong>Message:</strong> {{ data.message }}</p>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No messages yet.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

@@ -1,37 +1,11 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <title>Send message</title>
-  <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-  <div class="container">
-    <nav>
-      <a href="/">Home</a> |
-      <a href="/message">Send message</a> |
-      <a href="/read">Read messages</a>
-    </nav>
+<form action="/message" method="post">
+    <label>Your username
+        <input type="text" name="username" required>
+    </label>
 
-    <h1>Please send me message</h1>
+    <label>Your message
+        <textarea name="message" required></textarea>
+    </label>
 
-    <form action="/message" method="post">
-      <div>
-        <label for="username">Your nickname</label><br>
-        <input type="text" id="username" name="username" required>
-      </div>
-
-      <br>
-
-      <div>
-        <label for="message">Message</label><br>
-        <textarea id="message" name="message" required></textarea>
-      </div>
-
-      <br>
-
-      <button type="submit">Send</button>
-    </form>
-  </div>
-</body>
-</html>
+    <button type="submit">Send</button>
+</form>
